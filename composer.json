@@ -1,0 +1,24 @@
+{
+    "name": "m4aax16/kinguin-laravel",
+    "description": "Laravel wrapper package for the Kinguin API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Max Iwert",
+            "email": "max.iwert@4-gamers-shop.de"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "m4aax16\\kinguin\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel" : {
+            "providers": [
+                "m4aax16\\kinguin\\KinguinApiServiceProvider"
+            ]
+        }
+    }
+}
