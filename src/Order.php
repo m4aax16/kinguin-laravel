@@ -12,94 +12,111 @@ class Order extends Client
     
     public static function placeOrder($kinguinId,$qty,$price)
     {
+        try{
+            $apiKey = Client::getKey();
 
-        $apiKey = Client::getKey();
+            $http= new GuzzleClient();
 
-        $http= new GuzzleClient();
+            $requestUrl = self::baseUrl;
 
-        $requestUrl = self::baseUrl;
+            $apiError = array();
 
-        $apiError = array();
+            if(empty($kinguinId)){
+                $apiError['message'] = "kinguinId couldn't be empty";
+            }
+            else if(empty($qty)){
+                $apiError['message'] = "qty couldn't be empty";
+            }
+            else if(empty($kinguinId)){
+                $apiError['message'] = "price couldn't be empty";
+            }
 
-        if(empty($kinguinId)){
-            $apiError['message'] = "kinguinId couldn't be empty";
+            if($apiError)
+            {
+                return response()->json($apiError);
+            }
+            
+            $orderArr['products'][0]['kinguinId'] = $kinguinId;
+            $orderArr['products'][0]['qty'] = $qty;
+            $orderArr['products'][0]['price'] = $price;
+
+            $response = $http->request('POST', $requestUrl, [
+                'headers' => [
+                    'api-ecommerce-auth' => $apiKey,
+                    'Content-Type' => 'application/json'
+                ],
+                'body' => json_encode(
+                    $orderArr
+                ),
+            ]); 
+
+            return $responseData = json_decode($response->getBody(), true);
+
         }
-        else if(empty($qty)){
-            $apiError['message'] = "qty couldn't be empty";
-        }
-        else if(empty($kinguinId)){
-            $apiError['message'] = "price couldn't be empty";
-        }
-
-        if($apiError)
+        catch(GuzzleException $e)
         {
-            return response()->json($apiError);
+           return $e;
         }
-        
-        $orderArr['products'][0]['kinguinId'] = $kinguinId;
-        $orderArr['products'][0]['qty'] = $qty;
-        $orderArr['products'][0]['price'] = $price;
-
-        $response = $http->request('POST', $requestUrl, [
-            'headers' => [
-                'api-ecommerce-auth' => $apiKey,
-                'Content-Type' => 'application/json'
-            ],
-            'body' => json_encode(
-                $orderArr
-            ),
-        ]); 
-
-        return $responseData = json_decode($response->getBody(), true);
-
     }
 
     public static function dispatchOrder($orderId)
     {
 
-        $apiKey = Client::getKey();
+        try{
 
-        $http= new GuzzleClient();
+            $apiKey = Client::getKey();
 
-        $requestUrl = self::baseUrl;   
-        
-        $requestUrl = $requestUrl.'/dispatch';
-        
-        $bodyArr['orderId'] = $orderId;
+            $http= new GuzzleClient();
 
-        $response = $http->request('POST', $requestUrl, [
-            'headers' => [
-                'api-ecommerce-auth' => $apiKey,
-                'Content-Type' => 'application/json'
-            ],
-            'body' => json_encode(
-                $bodyArr
-            ),
-        ]); 
+            $requestUrl = self::baseUrl;   
+            
+            $requestUrl = $requestUrl.'/dispatch';
+            
+            $bodyArr['orderId'] = $orderId;
 
-        return $responseData = json_decode($response->getBody(), true);
+            $response = $http->request('POST', $requestUrl, [
+                'headers' => [
+                    'api-ecommerce-auth' => $apiKey,
+                    'Content-Type' => 'application/json'
+                ],
+                'body' => json_encode(
+                    $bodyArr
+                ),
+            ]); 
+
+            return $responseData = json_decode($response->getBody(), true);
+        }
+        catch(GuzzleException $e)
+       {
+           return $e;
+       }
 
     }
 
     public static function getOrderKeys($dispatchId)
     {
-        $apiKey = Client::getKey();
+        try{
+            $apiKey = Client::getKey();
 
-        $http= new GuzzleClient();
+            $http= new GuzzleClient();
 
-        $requestUrl = self::baseUrl; 
+            $requestUrl = self::baseUrl; 
+            
+            $requestUrl = $requestUrl.'/dispatch/keys?dispatchId='.$dispatchId;
+
+            $response = $http->request('GET', $requestUrl, [
+                'headers' => [
+                    'api-ecommerce-auth' => $apiKek,
+                    'Content-Type' => 'application/json'
+                ],
+            ]);
+
+            return $responseData = json_decode($response->getBody(), true);
         
-        $requestUrl = $requestUrl.'/dispatch/keys?dispatchId='.$dispatchId;
-
-        $response = $http->request('GET', $requestUrl, [
-            'headers' => [
-                'api-ecommerce-auth' => $apiKek,
-                'Content-Type' => 'application/json'
-            ],
-        ]);
-
-        return $responseData = json_decode($response->getBody(), true);
-
+        }
+         catch(GuzzleException $e)
+        {
+            return $e;
+        }
     }
-
 }

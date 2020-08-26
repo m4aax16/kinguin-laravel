@@ -8,25 +8,29 @@ use GuzzleHttp\Exception\GuzzleException;
 
 class User extends Client
 {
-
     const baseUrl = "https://api2.kinguin.net/integration/v1/balance";
     
     public static function getBalance()
     {
-        $apiKey = Client::getKey();
+        try{
+            $apiKey = Client::getKey();
 
-        $http= new GuzzleClient();
+            $http= new GuzzleClient();
 
-        $requestUrl = self::baseUrl;
+            $requestUrl = self::baseUrl;
+            
+            $response = $http->request('GET', $requestUrl, [
+                'headers' => [
+                    'api-ecommerce-auth' => $apiKey,
+                    'Content-Type' => 'application/json'
+                ],
+            ]); 
         
-        $response = $http->request('GET', $requestUrl, [
-            'headers' => [
-                'api-ecommerce-auth' => $apiKey,
-                'Content-Type' => 'application/json'
-            ],
-        ]); 
-        
-        return $responseData = json_decode($response->getBody(), true);
+            return $responseData = json_decode($response->getBody(), true);
+        }
+        catch(GuzzleException $e)
+        {
+            return $e;
+        }
     }
-
 }

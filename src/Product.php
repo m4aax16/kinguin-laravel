@@ -13,52 +13,69 @@ class Product extends Client
     
     public static function getPage(?int $page = null)
     {
-        $apiKey = Client::getKey();
+        try{
 
-        $http= new GuzzleClient();
+            $apiKey = Client::getKey();
 
-        $requestUrl = self::baseUrl;
+            $http= new GuzzleClient();
 
-        if(!empty($page)){
-            $requestUrl = $requestUrl.'?page='.$page;
+            $requestUrl = self::baseUrl;
+
+            if(!empty($page)){
+                $requestUrl = $requestUrl.'?page='.$page;
+            }
+            
+            $response = $http->request('GET', $requestUrl, [
+                'headers' => [
+                    'api-ecommerce-auth' => $apiKey,
+                    'Content-Type' => 'application/json'
+                ],
+            ]);
+
+
+            return $responseData = json_decode($response->getBody(), true);
         }
-        
-        $response = $http->request('GET', $requestUrl, [
-            'headers' => [
-                'api-ecommerce-auth' => $apiKey,
-                'Content-Type' => 'application/json'
-            ],
-        ]);
-        return $responseData = json_decode($response->getBody(), true);
+        catch(GuzzleException $e)
+        {
+            return $e;
+        }
     }
 
     public static function getPagesCount(?int $limit = 25)
     {
+        try{
+            $apiKey = Client::getKey();
 
-        $apiKey = Client::getKey();
+            $http= new GuzzleClient();
 
-        $http= new GuzzleClient();
+            $requestUrl = self::baseUrl;
 
-        $requestUrl = self::baseUrl;
+            $response = $http->request('GET', $requestUrl, [
+                'headers' => [
+                    'api-ecommerce-auth' => $apiKey,
+                    'Content-Type' => 'application/json'
+                ],
+            ]); 
 
-        $response = $http->request('GET', $requestUrl, [
-            'headers' => [
-                'api-ecommerce-auth' => $apiKey,
-                'Content-Type' => 'application/json'
-            ],
-        ]); 
+            $responseNew =  json_decode((string) $response->getBody(), true);
 
-        $responseNew =  json_decode((string) $response->getBody(), true);
-
-        $totalProducts = $responseNew['item_count'];
-        
-        $totalPages = ceil($totalProducts / $limit);
-        
-        return $totalPages;
+            $totalProducts = $responseNew['item_count'];
+            
+            $totalPages = ceil($totalProducts / $limit);
+            
+            return $totalPages;
+            
+        }
+         catch(GuzzleException $e)
+        {
+            return $e;
+        }
     }
 
     public static function getProduct($productId)
-    {
+    {   
+        try{
+
         $apiKey = Client::getKey();
 
         $http= new GuzzleClient();
@@ -73,5 +90,11 @@ class Product extends Client
         ]); 
 
         return $responseData = json_decode($response->getBody(), true);
+        
+        }
+        catch(GuzzleException $e)
+        {
+            return $e;
+        }
     }
 }

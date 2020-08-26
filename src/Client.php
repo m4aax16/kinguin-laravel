@@ -16,5 +16,4 @@ class Client
     {
         return self::$apiKey;
     }
-
 }
