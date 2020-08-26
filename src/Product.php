@@ -28,7 +28,7 @@ class Product extends Client
                 'api-ecommerce-auth' => $apiKey,
                 'Content-Type' => 'application/json'
             ],
-        ]); 
+        ]);
 
         return $responseData = json_decode($response->getBody(), true);
 
@@ -73,7 +73,6 @@ class Product extends Client
                 'Content-Type' => 'application/json'
             ],
         ]); 
-
 
         return $responseData = json_decode($response->getBody(), true);
     }
