@@ -93,7 +93,7 @@ class Order extends Client
 
         $response = $http->request('GET', $requestUrl, [
             'headers' => [
-                'api-ecommerce-auth' => $apiKey,
+                'api-ecommerce-auth' => $apiKek,
                 'Content-Type' => 'application/json'
             ],
         ]);

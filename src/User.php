@@ -25,7 +25,7 @@ class User extends Client
                 'Content-Type' => 'application/json'
             ],
         ]); 
-
+        
         return $responseData = json_decode($response->getBody(), true);
 
     }
