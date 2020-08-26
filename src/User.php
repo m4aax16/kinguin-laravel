@@ -27,7 +27,6 @@ class User extends Client
         ]); 
         
         return $responseData = json_decode($response->getBody(), true);
-
     }
 
 }

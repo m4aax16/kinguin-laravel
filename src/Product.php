@@ -29,9 +29,7 @@ class Product extends Client
                 'Content-Type' => 'application/json'
             ],
         ]);
-
         return $responseData = json_decode($response->getBody(), true);
-
     }
 
     public static function getPagesCount(?int $limit = 25)
