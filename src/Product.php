@@ -30,7 +30,8 @@ class Product extends Client
             ],
         ]); 
 
-        return $response;
+        return $responseData = json_decode($response->getBody(), true);
+
     }
 
     public static function getPagesCount(?int $limit = 25)
@@ -73,6 +74,7 @@ class Product extends Client
             ],
         ]); 
 
-        return $response;
+
+        return $responseData = json_decode($response->getBody(), true);
     }
 }
