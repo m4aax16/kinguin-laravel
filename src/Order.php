@@ -50,7 +50,8 @@ class Order extends Client
             ),
         ]); 
 
-        return $response;
+        return $responseData = json_decode($response->getBody(), true);
+
     }
 
     public static function dispatchOrder($orderId)
@@ -76,7 +77,8 @@ class Order extends Client
             ),
         ]); 
 
-        return $response;
+        return $responseData = json_decode($response->getBody(), true);
+
     }
 
     public static function getOrderKeys($dispatchId)
@@ -96,7 +98,8 @@ class Order extends Client
             ],
         ]);
 
-        return $response;
+        return $responseData = json_decode($response->getBody(), true);
+
     }
 
 }
