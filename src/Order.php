@@ -10,6 +10,7 @@ class Order extends Client
 {
     const baseUrl = "https://api2.kinguin.net/integration/v1/order";
     
+    //1. place order
     public static function placeOrder($kinguinId,$qty,$price)
     {
         try{
@@ -59,6 +60,7 @@ class Order extends Client
         }
     }
 
+    //2. dispatch order
     public static function dispatchOrder($orderId)
     {
 
@@ -93,6 +95,7 @@ class Order extends Client
 
     }
 
+    //3. get order keys
     public static function getOrderKeys($dispatchId)
     {
         try{

@@ -4,7 +4,7 @@ namespace m4aax16\kinguin;
 
 class Region
 {   
-
+    //constant regions array
     const REGIONS = array("1" => "Europe",
         "2"	 => "United States",
         "3"	 => "Region free",

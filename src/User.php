@@ -10,6 +10,7 @@ class User extends Client
 {
     const baseUrl = "https://api2.kinguin.net/integration/v1/balance";
     
+    //Try to get Balance of user
     public static function getBalance()
     {
         try{
