@@ -14,7 +14,7 @@ class Product extends Client
     public static function getPage(?int $page = null)
     {
         try{
-
+            //Build the client
             $apiKey = Client::getKey();
 
             $http= new GuzzleClient();
