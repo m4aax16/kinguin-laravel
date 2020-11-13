@@ -7,8 +7,8 @@ use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\GuzzleException;
 
 class Order extends Client
-{
-    const baseUrl = "https://api2.kinguin.net/integration/v1/order";
+{   
+    const baseUrl = "https://gateway.kinguin.net/esa/api/v1/order";
     
     //1. place order
     public static function placeOrder($kinguinId,$qty,$price)
@@ -56,7 +56,13 @@ class Order extends Client
         }
         catch(GuzzleException $e)
         {
-           return $e;
+           //Handle the exception
+           $errResponse = json_decode($e->getResponse()->getBody(), true);
+
+           return response()->json([
+               'error' => $e->getMessage(),
+               'response' => $errResponse
+           ], 500);
         }
     }
 
@@ -90,7 +96,13 @@ class Order extends Client
         }
         catch(GuzzleException $e)
        {
-           return $e;
+           //Handle the exception
+           $errResponse = json_decode($e->getResponse()->getBody(), true);
+
+           return response()->json([
+               'error' => $e->getMessage(),
+               'response' => $errResponse
+           ], 500);
        }
 
     }
@@ -109,7 +121,7 @@ class Order extends Client
 
             $response = $http->request('GET', $requestUrl, [
                 'headers' => [
-                    'api-ecommerce-auth' => $apiKek,
+                    'api-ecommerce-auth' => $apiKey,
                     'Content-Type' => 'application/json'
                 ],
             ]);
@@ -119,7 +131,13 @@ class Order extends Client
         }
          catch(GuzzleException $e)
         {
-            return $e;
+            //Handle the exception
+            $errResponse = json_decode($e->getResponse()->getBody(), true);
+
+            return response()->json([
+                'error' => $e->getMessage(),
+                'response' => $errResponse
+            ], 500);
         }
     }
 }

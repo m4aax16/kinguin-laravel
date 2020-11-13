@@ -7,10 +7,9 @@ use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\GuzzleException;
 
 class Product extends Client
-{
+{   
+    const baseUrl = "https://gateway.kinguin.net/esa/api/v1/products";
 
-    const baseUrl = "https://api2.kinguin.net/integration/v1/products";
-    
     public static function getPage(?int $page = null)
     {
         try{
@@ -32,12 +31,17 @@ class Product extends Client
                 ],
             ]);
 
-
             return $responseData = json_decode($response->getBody(), true);
         }
         catch(GuzzleException $e)
         {
-            return $e;
+            //Handle the exception
+            $errResponse = json_decode($e->getResponse()->getBody(), true);
+
+            return response()->json([
+                'error' => $e->getMessage(),
+                'response' => $errResponse
+            ], 500);
         }
     }
 
@@ -68,7 +72,13 @@ class Product extends Client
         }
          catch(GuzzleException $e)
         {
-            return $e;
+            //Handle the exception
+            $errResponse = json_decode($e->getResponse()->getBody(), true);
+
+            return response()->json([
+                'error' => $e->getMessage(),
+                'response' => $errResponse
+            ], 500);
         }
     }
 
@@ -94,7 +104,13 @@ class Product extends Client
         }
         catch(GuzzleException $e)
         {
-            return $e;
+            //Handle the exception
+            $errResponse = json_decode($e->getResponse()->getBody(), true);
+
+            return response()->json([
+                'error' => $e->getMessage(),
+                'response' => $errResponse
+            ], 500);
         }
     }
 }

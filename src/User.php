@@ -8,7 +8,7 @@ use GuzzleHttp\Exception\GuzzleException;
 
 class User extends Client
 {
-    const baseUrl = "https://api2.kinguin.net/integration/v1/balance";
+    const baseUrl = "https://gateway.kinguin.net/esa/api/v1/balance";
     
     //Try to get Balance of user
     public static function getBalance()
@@ -31,7 +31,13 @@ class User extends Client
         }
         catch(GuzzleException $e)
         {
-            return $e;
+            //Handle the exception
+            $errResponse = json_decode($e->getResponse()->getBody(), true);
+
+            return response()->json([
+                'error' => $e->getMessage(),
+                'response' => $errResponse
+            ], 500);
         }
     }
 }
