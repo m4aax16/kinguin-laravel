@@ -180,7 +180,7 @@ $keys = Order::getOrderKeys($dispatchId);
 
 ### Handle Exceptions
 
-Note : It works on all methods except on Region:class
+Note : It works on all methods except on Region::class
 
 ```php
 	
