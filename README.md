@@ -213,7 +213,7 @@ Note : It works on all methods except on Region::class
                 Error Code : 2401
                 Error Message : Full authentication is required to access this resource.
 
-                2. If the client is authorized but something goes wrong.For example the requested product does not exist
+                2. If the client is authorized but something goes wrong. For example the requested product does not exist =>
 
                 Full Error : Client error: `GET https://gateway.kinguin.net/esa/api/v1/products/0` resulted in a `404 Not Found` response: {"code":3404,"message":"Product not found"}
                 Error Code : 3404
