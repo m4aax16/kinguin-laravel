@@ -6,7 +6,7 @@
 
 ## Installation
 
-``` composer require m4aax16\kinguin-laravel ```
+``` composer require m4aax16/kinguin-laravel "^1.0.4-alpha" ```
 
 ## Functions
 	Product:
@@ -25,6 +25,7 @@
 		- Place order
 		- Dispatch order
 		- Get order keys
+	Handle Exceptions
 
 
 ## Usage
@@ -173,6 +174,59 @@ $keys = Order::getOrderKeys($dispatchId);
         name	"Warhammer 40,000: Space Marine Steam CD Key"
         kinguinId	195
 */
+
+
+```
+
+### Handle Exceptions
+
+Note : It works on all methods except on Region:class
+
+```php
+	
+   $productId = 0; //set the kinguinId of product
+
+    $product = Product::getProduct($productId); //returns detailed information about this product
+
+    //Check the method getStatusCode exists
+    if(method_exists($product,'getStatusCode')){
+      //If the status code is higher than 200
+      if($product->getStatusCode() > 200){
+         
+        //This method return the full error message inline
+        $errFull = $product->getData()->error;
+
+        //This method return only the Kinguin Error Code
+        $errCode = $product->getData()->response->code;
+        
+        //This method return the error message
+        $errMessage = $product->getData()->response->message;
+
+        echo "Full Error : ".$errFull."</br>";
+        echo "Error Code : ".$errCode."</br>";
+        echo "Error Message : ".$errMessage."</br>";
+
+        /* Example ouputs : 
+                1. If the client is not authorized =>
+
+                Full Error : Client error: `GET https://gateway.kinguin.net/esa/api/v1/products/0` resulted in a `401 Unauthorized` response: {"code":2401,"message":"Full authentication is required to access this resource."}
+                Error Code : 2401
+                Error Message : Full authentication is required to access this resource.
+
+                2. If the client is authorized but something goes wrong.For example the requested product does not exist
+
+                Full Error : Client error: `GET https://gateway.kinguin.net/esa/api/v1/products/0` resulted in a `404 Not Found` response: {"code":3404,"message":"Product not found"}
+                Error Code : 3404
+                Error Message : Product not found
+        */
+
+      }
+    }
+    else{
+       //Do something clever with the requested product
+       return $product;
+
+    }
 
 
 ```
