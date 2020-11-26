@@ -6,7 +6,7 @@
 
 ## Installation
 
-``` composer require m4aax16/kinguin-laravel "^1.0.4-alpha" ```
+``` composer require m4aax16/kinguin-laravel "^1.0.4.2-alpha" ```
 
 ## Functions
 	Product:
