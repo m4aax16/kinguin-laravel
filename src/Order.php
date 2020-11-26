@@ -11,7 +11,7 @@ class Order extends Client
     const baseUrl = "https://gateway.kinguin.net/esa/api/v1/order";
     
     //1. place order
-    public static function placeOrder($kinguinId,$qty,$price,$couponCode)
+    public static function placeOrder($kinguinId,$qty,$price,$couponCode = null)
     {
         try{
             $apiKey = Client::getKey();
@@ -45,12 +45,11 @@ class Order extends Client
             /* Add CouponCode
                For more information visit : https://github.com/kinguinltdhk/Kinguin-eCommerce-API/blob/master/features/CouponCode.md
             */
-            
-            if(isset($couponCode)){
+
+            if(!empty($couponCode)){
                 $orderArr['couponCode'] = $couponCode;
             }
             
-
             $response = $http->request('POST', $requestUrl, [
                 'headers' => [
                     'api-ecommerce-auth' => $apiKey,
