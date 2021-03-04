@@ -8,8 +8,26 @@ use GuzzleHttp\Exception\GuzzleException;
 
 class Order extends Client
 {   
-    const baseUrl = "https://gateway.kinguin.net/esa/api/v1/order";
     
+    private $apiVersion = "v1";
+    const baseUrl = "https://gateway.kinguin.net/esa/api/";
+    const endpoint = "order";
+    
+    function __construct()
+    {
+
+    }
+
+    public function setApiVersion($version)
+    {
+        $this->apiVersion = $version;
+    }
+
+    public function getApiVersion()
+    {
+        return $this->apiVersion;
+    }
+
     //1. place order
     public static function placeOrder($kinguinId,$qty,$price,$couponCode = null)
     {
@@ -18,7 +36,10 @@ class Order extends Client
 
             $http= new GuzzleClient();
 
-            $requestUrl = self::baseUrl;
+            //Force using API V1
+            $this->setApiVersion("v1");
+
+            $requestUrl = self::baseUrl.'/'.$this->apiVersion.'/'.self::endpoint;
 
             $apiError = array();
 
@@ -85,9 +106,10 @@ class Order extends Client
 
             $http= new GuzzleClient();
 
-            $requestUrl = self::baseUrl;   
-            
-            $requestUrl = $requestUrl.'/dispatch';
+            //Force using API V1
+            $this->setApiVersion("v1");
+
+            $requestUrl = self::baseUrl.'/'.$this->apiVersion.'/'.self::endpoint.'/dispatch';
             
             $bodyArr['orderId'] = $orderId;
 
@@ -117,16 +139,51 @@ class Order extends Client
     }
 
     //3. get order keys
-    public static function getOrderKeys($dispatchId)
+    public static function getOrderKeys($dispatchId) // By dispatchId
     {
         try{
             $apiKey = Client::getKey();
 
             $http= new GuzzleClient();
 
-            $requestUrl = self::baseUrl; 
-            
-            $requestUrl = $requestUrl.'/dispatch/keys?dispatchId='.$dispatchId;
+            //Force using API V1
+            $this->setApiVersion("v1");
+
+            $requestUrl = self::baseUrl.'/'.$this->apiVersion.'/'.self::endpoint.'/dispatch/keys?dispatchId='.$dispatchId;
+
+            $response = $http->request('GET', $requestUrl, [
+                'headers' => [
+                    'api-ecommerce-auth' => $apiKey,
+                    'Content-Type' => 'application/json'
+                ],
+            ]);
+
+            return $responseData = json_decode($response->getBody(), true);
+        
+        }
+         catch(GuzzleException $e)
+        {
+            //Handle the exception
+            $errResponse = json_decode($e->getResponse()->getBody(), true);
+
+            return response()->json([
+                'error' => $e->getMessage(),
+                'response' => $errResponse
+            ], 500);
+        }
+    }
+
+    //4. get order keys
+    public static function getOrderKeyById($orderId)
+    {
+        try{
+            $apiKey = Client::getKey();
+            $http= new GuzzleClient();
+
+            //Force using API V2
+            $this->setApiVersion("v2");
+
+            $requestUrl = self::baseUrl.'/'.$this->apiVersion.'/'.self::endpoint.'/'.$orderId.'/keys';
 
             $response = $http->request('GET', $requestUrl, [
                 'headers' => [
