@@ -6,7 +6,7 @@
 
 ## Installation
 
-``` composer require m4aax16/kinguin-laravel "^1.0.4.2-alpha" ```
+``` composer require m4aax16/kinguin-laravel "^1.0.4.3-alpha" ```
 
 ## Functions
 	Product:
@@ -178,6 +178,31 @@ $keys = Order::getOrderKeys($dispatchId);
 
 
 ```
+Note : 
+To save your own and Kinguin server resources, it's highly recommend subscribing to order postback.
+It's also much more efficient. Replace your storeId if you want to use this url :
+https://www.kinguin.net/integration/dashboard/stores/{storeId}/postback
+
+As soon as the Post Back notification arrives, this function can be used : 
+
+```php
+$kgOrderId = "9XQ3FFRQKVL";
+$keys = Order::getOrderKeyById($kgOrderId);
+
+/* Example Output :
+	0	
+	serial	"Real_1942  XYYG8-4GBCC-ILMFM"
+	type	"text/plain"
+	name	"Real 1942 Steam CD Key"
+	kinguinId	57083
+	productId	"5c9b787a2539a4e8f184354a"
+	offerId	"5fa56a6d9c2506000196e12a"
+*/
+
+```
+
+
+
 
 ### Handle Exceptions
 
