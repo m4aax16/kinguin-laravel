@@ -8,24 +8,12 @@ use GuzzleHttp\Exception\GuzzleException;
 
 class Order extends Client
 {   
-    
-    private $apiVersion = "v1";
-    const baseUrl = "https://gateway.kinguin.net/esa/api/";
+    const baseUrl = "https://gateway.kinguin.net/esa/api";
     const endpoint = "order";
     
     function __construct()
     {
 
-    }
-
-    public function setApiVersion($version)
-    {
-        $this->apiVersion = $version;
-    }
-
-    public function getApiVersion()
-    {
-        return $this->apiVersion;
     }
 
     //1. place order
@@ -39,7 +27,7 @@ class Order extends Client
             //Force using API V1
             $this->setApiVersion("v1");
 
-            $requestUrl = self::baseUrl.'/'.$this->apiVersion.'/'.self::endpoint;
+            $requestUrl = self::baseUrl.'/v1/'.self::endpoint;
 
             $apiError = array();
 
@@ -109,7 +97,7 @@ class Order extends Client
             //Force using API V1
             $this->setApiVersion("v1");
 
-            $requestUrl = self::baseUrl.'/'.$this->apiVersion.'/'.self::endpoint.'/dispatch';
+            $requestUrl = self::baseUrl.'/v1/'.self::endpoint.'/dispatch';
             
             $bodyArr['orderId'] = $orderId;
 
@@ -146,10 +134,7 @@ class Order extends Client
 
             $http= new GuzzleClient();
 
-            //Force using API V1
-            $this->setApiVersion("v1");
-
-            $requestUrl = self::baseUrl.'/'.$this->apiVersion.'/'.self::endpoint.'/dispatch/keys?dispatchId='.$dispatchId;
+            $requestUrl = self::baseUrl.'/v1/'.self::endpoint.'/dispatch/keys?dispatchId='.$dispatchId;
 
             $response = $http->request('GET', $requestUrl, [
                 'headers' => [
@@ -180,10 +165,7 @@ class Order extends Client
             $apiKey = Client::getKey();
             $http= new GuzzleClient();
 
-            //Force using API V2
-            $this->setApiVersion("v2");
-
-            $requestUrl = self::baseUrl.'/'.$this->apiVersion.'/'.self::endpoint.'/'.$orderId.'/keys';
+            $requestUrl = self::baseUrl.'/v2/'.self::endpoint.'/'.$orderId.'/keys';
 
             $response = $http->request('GET', $requestUrl, [
                 'headers' => [
