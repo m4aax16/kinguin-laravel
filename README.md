@@ -6,7 +6,7 @@
 
 ## Installation
 
-``` composer require m4aax16/kinguin-laravel "^1.0.4-alpha" ```
+``` composer require m4aax16/kinguin-laravel "^1.0.4.2-alpha" ```
 
 ## Functions
 	Product:
@@ -154,7 +154,8 @@ $qty = 1;
 $price = 0.59;
 
 //All parameter all required
-$order = Order::placeOrder($productId,$qty,$price);  // returns a json with order "orderId: 26983294"
+$order = Order::placeOrder($productId,$qty,$price,$couponCode*);  // returns a json with order "orderId: 26983294"
+								  // $couponCode is a optional parameter
 
 ```
 ### Dispatch order
