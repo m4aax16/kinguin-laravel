@@ -25,8 +25,6 @@ class Order extends Client
             $http= new GuzzleClient();
 
             //Force using API V1
-            $this->setApiVersion("v1");
-
             $requestUrl = self::baseUrl.'/v1/'.self::endpoint;
 
             $apiError = array();
@@ -95,8 +93,6 @@ class Order extends Client
             $http= new GuzzleClient();
 
             //Force using API V1
-            $this->setApiVersion("v1");
-
             $requestUrl = self::baseUrl.'/v1/'.self::endpoint.'/dispatch';
             
             $bodyArr['orderId'] = $orderId;
