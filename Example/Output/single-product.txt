@@ -1,87 +1,211 @@
 {
-   "name":"Anno 2070 - Deep Ocean DLC Uplay CD Key",
-   "description":"Anno is a real-time strategy video game series with business simulation and city building elements. It involves colony building and resource management on a series of small islands. It includes aspects of exploration, combat, diplomacy and trade",
-   "coverImage":"https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070-deep-ocean_cover.jpg",
-   "coverImageOriginal":"https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070-deep-ocean_cover_original.jpg",
-   "developers":[
-      "Related Designs",
-      "Blue Byte Software"
-   ],
-   "publishers":[
-      "Ubisoft Entertainment"
-   ],
-   "genres":[
-      "Strategy"
-   ],
-   "platform":"Uplay",
-   "releaseDate":"2012-10-05T00:00:00+00:00",
-   "qty":2,
-   "price":4.98,
-   "isPreorder":false,
-   "regionalLimitations":"Region free",
-   "regionId":3,
-   "activationDetails":"Enter the main menu of the game. Click on your player avatar to the top left as seen below to enter the profile\r\nIn the profile data menu, click the \"Rewards\" tab\r\nThen click the \"Redeem code\" button to the bottom right\r\nA pop-up screen will appear: please enter your activation code in the field\r\nThe ANNO 2070 Deep Ocean content is now unlocked.\r\nThe game will ask for a restart to receive and download the Deep Ocean data via the Autopatcher.",
-   "kinguinId":5,
-   "originalName":"Anno 2070: Deep Ocean",
-   "screenshots":[
-      {
-         "url":"https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070-deep-ocean_thumb_1.jpg",
-         "url_original":"https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070-deep-ocean_original_1.jpg"
-      },
-      {
-         "url":"https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070-deep-ocean_thumb_2.jpg",
-         "url_original":"https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070-deep-ocean_original_2.jpg"
-      },
-      {
-         "url":"https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070-deep-ocean_thumb_3.jpg",
-         "url_original":"https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070-deep-ocean_original_3.jpg"
-      },
-      {
-         "url":"https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070-deep-ocean_thumb_4.jpg",
-         "url_original":"https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070-deep-ocean_original_4.jpg"
-      },
-      {
-         "url":"https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070-deep-ocean_thumb_5.jpg",
-         "url_original":"https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070-deep-ocean_original_5.jpg"
-      }
-   ],
-   "videos":[
-      
-   ],
-   "languages":[
-      "German",
-      "English",
-      "French",
-      "Spanish",
-      "Czech",
-      "Polish",
-      "Russian",
-      "Italian"
-   ],
-   "type":"serial",
-   "status":"active",
-   "systemRequirements":[
-      {
-         "system":"Windows",
-         "requirement":[
-            "OS: Windows\u00ae XP \/ Windows Vista\u00ae \/ Windows\u00ae 7",
-            "Processor: 2 GHz Intel\u00ae Core\u21222 Duo or AMD Athlon\u2122 64 X2 or better",
-            "Memory: 2 GB (4 GB recommended)",
-            "Graphics: 512 MB DirectX\u00ae 9.0c\u2013compatible with Shader Model 3.0 or higher (see supported list)*",
-            "DirectX\u00ae: 9.0c",
-            "Hard Drive: 5 GB",
-            "Sound: DirectX 9.0c\u2013compliant",
-            "Peripherals: Windows-compatible mouse and keyboard",
-            "Internet Connection: Temporary broadband connection for product registration, permanent broadband connection for multiplayer.",
-            "Supported Video Cards at Time of Release: ATI Radeon\u2122 X1000\/HD 2000\/3000\/4000\/5000\/6000 series; NVIDIA\u00ae GeForce\u00ae 7\/8\/9\/100\/200\/300\/400\/500 seriesLaptop versions of these cards may work, but are not supported. These chipsets are the only ones that will run this game."
-         ]
-      }
-   ],
-   "tags":[
-      "dlc"
-   ],
-   "merchantName":[
-      "GamingWorld"
-   ],
-   "updatedAt":"2020-08-21T23:46:49+00:00"
+	"name": "Anno 2070 Ubisoft Connect CD Key",
+	"description": "Anno 2070 is a city-building and economic simulation game, with real-time strategy elements. It is the 5th game of the Anno series. It was released on 17 November 2011, and was co-developed by the German studios Related Designs and Ubisoft Blue Byte, and published by Ubisoft. Anno 2070 requires Uplay to operate.",
+	"coverImage": "https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070_cover.jpg",
+	"coverImageOriginal": "https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070_cover_original.jpg",
+	"developers": [
+		"Related Designs",
+		"Blue Byte Software"
+	],
+	"publishers": [
+		"Ubisoft Entertainment"
+	],
+	"genres": [
+		"Strategy"
+	],
+	"platform": "Uplay",
+	"releaseDate": "2011-11-17",
+	"qty": 33,
+	"textQty": 33,
+	"price": 3.68,
+	"cheapestOfferId": [
+		"5fbfc66a2ad6c600012aa5ef"
+	],
+	"isPreorder": false,
+	"metacriticScore": 83,
+	"regionalLimitations": "Region Free",
+	"regionId": 3,
+	"activationDetails": "Go to:  http:\/\/uplay.ubi.com and download Uplay client.\r\n\r\n\r\nInstall Uplay Client on your PC.\r\n\r\n\r\nStart the application, login with your Account name and Password (create one if you don't have).\r\n\r\n\r\nPlease follow these instructions to activate a new retail purchase on Uplay:\r\n\r\nClick the Settings\r\nChoose Activate Product\r\nFollow the onscreen instructions to complete the process.",
+	"kinguinId": 4,
+	"productId": "5c9b5eab2539a4e8f172143e",
+	"originalName": "Anno 2070",
+	"screenshots": [
+		{
+			"url": "https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070_thumb_0.jpg",
+			"url_original": "https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070_original_0.jpg"
+		},
+		{
+			"url": "https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070_thumb_1.jpg",
+			"url_original": "https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070_original_1.jpg"
+		},
+		{
+			"url": "https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070_thumb_2.jpg",
+			"url_original": "https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070_original_2.jpg"
+		},
+		{
+			"url": "https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070_thumb_3.jpg",
+			"url_original": "https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070_original_3.jpg"
+		},
+		{
+			"url": "https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070_thumb_4.jpg",
+			"url_original": "https:\/\/storage.googleapis.com\/api-ecommerce\/anno-2070_original_4.jpg"
+		}
+	],
+	"videos": [
+		{
+			"name": "Trailer",
+			"video_id": "6ONqSVh_EfM"
+		}
+	],
+	"languages": [
+		"German",
+		"English",
+		"French",
+		"Spanish",
+		"Czech",
+		"Polish",
+		"Russian",
+		"Italian"
+	],
+	"systemRequirements": [
+		{
+			"system": "Windows",
+			"requirement": [
+				"OS: Windows® XP \/ Windows Vista® \/ Windows® 7",
+				"Processor: 2 GHz Intel® Core™2 Duo or AMD Athlon™ 64 X2 or better",
+				"Memory: 2 GB (4 GB recommended)",
+				"Graphics: 512 MB DirectX® 9.0c–compatible with Shader Model 3.0 or higher (see supported list)*",
+				"DirectX®: 9.0c",
+				"Hard Drive: 5 GB",
+				"Sound: DirectX 9.0c–compliant",
+				"Peripherals: Windows-compatible mouse and keyboard",
+				"Internet Connection: Temporary broadband connection for product registration, permanent broadband connection for multiplayer.",
+				"Supported Video Cards at Time of Release: ATI Radeon™ X1000\/HD 2000\/3000\/4000\/5000\/6000 series; NVIDIA® GeForce® 7\/8\/9\/100\/200\/300\/400\/500 seriesLaptop versions of these cards may work, but are not supported. These chipsets are the only ones that will run this game."
+			]
+		}
+	],
+	"tags": [
+		"base"
+	],
+	"offers": [
+		{
+			"name": "Anno 2070 Ubisoft Connect CD Key",
+			"offerId": "6058aa5c6112b60001b41d78",
+			"price": 3.9,
+			"qty": 10,
+			"textQty": 10,
+			"merchantName": "HoGames",
+			"isPreorder": false,
+			"releaseDate": "2011-11-17"
+		},
+		{
+			"name": "Anno 2070 Ubisoft Connect CD Key",
+			"offerId": "5fbfc66a2ad6c600012aa5ef",
+			"price": 3.68,
+			"qty": 33,
+			"textQty": 33,
+			"merchantName": "PC Game Store",
+			"isPreorder": false,
+			"releaseDate": "2011-11-17"
+		},
+		{
+			"name": "Anno 2070 Ubisoft Connect CD Key",
+			"offerId": "6296c7ea164346000195b9db",
+			"price": 3.8,
+			"qty": 4,
+			"textQty": 4,
+			"merchantName": "Picgame",
+			"isPreorder": false,
+			"releaseDate": "2011-11-17"
+		},
+		{
+			"name": "Anno 2070 Ubisoft Connect CD Key",
+			"offerId": "62d54d425fd18c000137163a",
+			"price": 5.13,
+			"qty": 3,
+			"textQty": 0,
+			"merchantName": "Codezilla",
+			"isPreorder": false,
+			"releaseDate": "2011-11-17"
+		},
+		{
+			"name": "Anno 2070 Ubisoft Connect CD Key",
+			"offerId": "604347b4abdbbf000131a57a",
+			"price": 3.78,
+			"qty": 10,
+			"textQty": 10,
+			"merchantName": "ICE_GOLD",
+			"isPreorder": false,
+			"releaseDate": "2011-11-17"
+		},
+		{
+			"name": "Anno 2070 Ubisoft Connect CD Key",
+			"offerId": "5fb5819ffdae4e0001c6277c",
+			"price": 3.69,
+			"qty": 3,
+			"textQty": 0,
+			"merchantName": "Super Games",
+			"isPreorder": false,
+			"releaseDate": "2011-11-17"
+		},
+		{
+			"name": "Anno 2070 Ubisoft Connect CD Key",
+			"offerId": "61c49edc3d17fe0001d38b4c",
+			"price": 4.21,
+			"qty": 9,
+			"textQty": 0,
+			"merchantName": "MGG Studio",
+			"isPreorder": false,
+			"releaseDate": "2011-11-17"
+		},
+		{
+			"name": "Anno 2070 Ubisoft Connect CD Key",
+			"offerId": "640e24a027866a0001f69055",
+			"price": 4.55,
+			"qty": 3,
+			"textQty": 0,
+			"merchantName": "USA Software & Games",
+			"isPreorder": false,
+			"releaseDate": "2011-11-17"
+		}
+	],
+	"offersCount": 8,
+	"totalQty": 75,
+	"merchantName": [
+		"PC Game Store"
+	],
+	"ageRating": "PEGI 7",
+	"steam": "48240",
+	"images": {
+		"screenshots": [
+			{
+				"url": "https:\/\/static.kinguin.net\/media\/category\/s\/s\/ss_d2808ba27ed14f7cf631c2bb40ecc4c05f6139b4-1024_1.jpg",
+				"thumbnail": "https:\/\/static.kinguin.net\/media\/category\/s\/s\/cache\/200x120\/ss_d2808ba27ed14f7cf631c2bb40ecc4c05f6139b4-1024_1.jpg"
+			},
+			{
+				"url": "https:\/\/static.kinguin.net\/media\/category\/s\/s\/ss_d03e46c5809ba5692a5bfb156eb517d1ccf8d86f-1024_1.jpg",
+				"thumbnail": "https:\/\/static.kinguin.net\/media\/category\/s\/s\/cache\/200x120\/ss_d03e46c5809ba5692a5bfb156eb517d1ccf8d86f-1024_1.jpg"
+			},
+			{
+				"url": "https:\/\/static.kinguin.net\/media\/category\/s\/s\/ss_812392dba4b508b65b702c44d172ed20950ae453-1024_1.jpg",
+				"thumbnail": "https:\/\/static.kinguin.net\/media\/category\/s\/s\/cache\/200x120\/ss_812392dba4b508b65b702c44d172ed20950ae453-1024_1.jpg"
+			},
+			{
+				"url": "https:\/\/static.kinguin.net\/media\/category\/s\/s\/ss_b8937b99db3cb50fd23458eb10d89146ff25476e-1024_1.jpg",
+				"thumbnail": "https:\/\/static.kinguin.net\/media\/category\/s\/s\/cache\/200x120\/ss_b8937b99db3cb50fd23458eb10d89146ff25476e-1024_1.jpg"
+			},
+			{
+				"url": "https:\/\/static.kinguin.net\/media\/category\/s\/s\/ss_57b0a53ffc2ab0d883338fbd21804e3a75f74908-1024_1.jpg",
+				"thumbnail": "https:\/\/static.kinguin.net\/media\/category\/s\/s\/cache\/200x120\/ss_57b0a53ffc2ab0d883338fbd21804e3a75f74908-1024_1.jpg"
+			},
+			{
+				"url": "https:\/\/static.kinguin.net\/media\/category\/1\/-\/1-1024_907.jpg",
+				"thumbnail": "https:\/\/static.kinguin.net\/media\/category\/1\/-\/cache\/200x120\/1-1024_907.jpg"
+			}
+		],
+		"cover": {
+			"thumbnail": "https:\/\/static.kinguin.net\/media\/catalog\/category\/cache\/1\/thumbnail\/9df78eab33525d08d6e5fb8d27136e95\/anno_7.jpg"
+		}
+	},
+	"updatedAt": "2023-10-30T05:49:13+00:00"
 }
